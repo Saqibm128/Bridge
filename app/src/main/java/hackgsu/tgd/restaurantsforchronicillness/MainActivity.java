@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
         diseaseList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getApplicationContext(), MapOrListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MapOrListActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getApplicationContext().startActivity(intent);
             }
         });
     }
