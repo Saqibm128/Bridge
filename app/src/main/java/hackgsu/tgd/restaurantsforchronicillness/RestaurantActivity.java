@@ -30,12 +30,8 @@ public class RestaurantActivity extends AppCompatActivity {
         setContentView(R.layout.activity_restaurant);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TextView rName = (TextView) findViewById(R.id.restaurantName);
-        rName.setText(r.getRestaurantName());
-        TextView dName = (TextView) findViewById(R.id.diseaseRatingTitle);
-        dName.setText(d.getDiseaseName());
-        TextView rDescription = (TextView) findViewById(R.id.restaurantDescription);
-        rDescription.setText(r.getRestaurantDescription() + "\nRating: " + r.getRestaurantRating() + "\nRating for " + d.getDiseaseName() + " : " + r.getRestaurantCustomRating(d));
+        TextView rDescription = (TextView) findViewById(R.id.restaurantName);
+        rDescription.setText(r.getRestaurantName() + "\n" +r.getRestaurantDescription() + "\nRating: " + r.getRestaurantRating() + "\nRating for " + d.getDiseaseName() + " : " );
 
         RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar);
         ratingBar1.setNumStars((int)r.getRestaurantRating());

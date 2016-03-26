@@ -47,18 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/diseaseRatingBar"
-        android:layout_below="@+id/diseaseRatingTitle"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="getDiseaseName Rating"
-        android:id="@+id/diseaseRatingTitle"
-        android:layout_below="@+id/ratingBar"
-        android:layout_alignLeft="@+id/ratingBar"
-        android:layout_alignStart="@+id/ratingBar" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ratingBar" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,21 +56,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Restaurant Description"
         android:id="@+id/descriptionTitle"
-        android:layout_alignBottom="@+id/restaurantDescription"
-        android:layout_alignLeft="@+id/diseaseRatingBar"
-        android:layout_alignStart="@+id/diseaseRatingBar" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="getRestaurantDescription"
-        android:id="@+id/restaurantDescription"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/diseaseRatingBar"
-        android:layout_alignRight="@+id/restaurantName"
-        android:layout_alignEnd="@+id/restaurantName" />
+        android:layout_alignRight="@+id/diseaseRatingBar"
+        android:layout_alignEnd="@+id/diseaseRatingBar" />
 
     <Button
         android:layout_width="wrap_content"
@@ -96,8 +74,8 @@
         android:layout_height="wrap_content"
         android:text="Add Rating"
         android:id="@+id/addRatingButton"
-        android:layout_below="@+id/restaurantDescription"
         android:layout_alignLeft="@+id/goToMapButton"
         android:layout_alignStart="@+id/goToMapButton"
-        android:layout_marginTop="58dp" />
+        android:layout_marginTop="58dp"
+        android:layout_below="@+id/diseaseRatingBar" />
 </RelativeLayout>

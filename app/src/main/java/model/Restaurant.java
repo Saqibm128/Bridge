@@ -31,7 +31,9 @@ public class Restaurant {
     public double getRestaurantCustomRating(Disease d){
         List<Double> disRatings = customRatings.get(d);
         double sum = 0;
-        for(Double num : disRatings) {
+        for(int i = 0; i < disRatings.size(); i++) {
+            Double num = disRatings.get(i);
+            if (num != null)
             sum += num;
         }
         sum /= customRatings.size();
