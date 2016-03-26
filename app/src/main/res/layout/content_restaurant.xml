@@ -12,14 +12,6 @@
     tools:context="hackgsu.tgd.restaurantsforchronicillness.RestaurantActivity"
     tools:showIn="@layout/activity_restaurant">
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
-        android:layout_below="@+id/overallRating"
-        android:layout_alignLeft="@+id/diseaseRatingBar"
-        android:layout_alignStart="@+id/diseaseRatingBar" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,27 +20,26 @@
         android:id="@+id/restaurantName"
         android:textSize="100px"
         android:autoText="false"
+        android:hyphenationFrequency="none"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hyphenationFrequency="none" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Overall Rating"
+        android:text="Rating"
         android:id="@+id/overallRating"
+        android:layout_marginTop="29dp"
         android:layout_below="@+id/restaurantName"
-        android:layout_alignLeft="@+id/addRatingButton"
-        android:layout_alignStart="@+id/addRatingButton" />
+        android:layout_centerHorizontal="true" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/diseaseRatingBar"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/ratingBar" />
+        android:layout_below="@+id/overallRating"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,8 +48,8 @@
         android:text="Restaurant Description"
         android:id="@+id/descriptionTitle"
         android:layout_below="@+id/diseaseRatingBar"
-        android:layout_alignRight="@+id/diseaseRatingBar"
-        android:layout_alignEnd="@+id/diseaseRatingBar" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -66,16 +57,16 @@
         android:text="Get Directions"
         android:id="@+id/goToMapButton"
         android:onClick="onDirections"
-        android:layout_below="@+id/addRatingButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/restaurantName"
+        android:layout_alignStart="@+id/restaurantName" />
 
     <Button
         android:layout_width="132dp"
         android:layout_height="wrap_content"
         android:text="Add Rating"
         android:id="@+id/addRatingButton"
-        android:layout_alignLeft="@+id/goToMapButton"
-        android:layout_alignStart="@+id/goToMapButton"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/diseaseRatingBar" />
+        android:layout_alignTop="@+id/goToMapButton"
+        android:layout_toRightOf="@+id/overallRating"
+        android:layout_toEndOf="@+id/overallRating" />
 </RelativeLayout>
