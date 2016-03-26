@@ -3,4 +3,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_map">Map</string>
     <string name="title_activity_restaurant">RestaurantActivity</string>
+    <string name="google_app_id">AIzaSyAFP1JlimmJE9c8p6k5azasqXAFBP99Chw</string>
 </resources>

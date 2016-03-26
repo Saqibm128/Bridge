@@ -22,7 +22,7 @@ public class MapOrListActivity extends AppCompatActivity {
 //        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //        getApplicationContext().startActivity(intent);
         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
-        LatLngBounds l = LatLngBounds.builder().include(new LatLng(33.767, -84.39)).build();
+        LatLngBounds l = LatLngBounds.builder().include(new LatLng(33.573, -84.385)).build();
         builder.setLatLngBounds(l);
         try {
             startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST);
