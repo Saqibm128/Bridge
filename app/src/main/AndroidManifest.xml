@@ -25,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapOrListActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,10 +40,6 @@
             android:name="com.google.android.gms.location.places.ui.PlacePicker"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapActivity"
-            android:label="@string/title_activity_map" />
-        <activity android:name=".ListActivity" />
         <activity
             android:name=".RestaurantActivity"
             android:label="@string/title_activity_restaurant"

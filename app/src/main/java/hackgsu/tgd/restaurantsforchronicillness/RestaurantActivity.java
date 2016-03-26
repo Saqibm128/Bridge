@@ -20,7 +20,7 @@ public class RestaurantActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Place p = MapOrListActivity.getPlace();
+        Place p = MainActivity.getPlace();
         String att = p.getAttributions()==null ? "" : p.getAttributions().toString();
         String name = p.getName()==null ? "" : p.getName().toString();
         r = new Restaurant(name, p.getRating(), att);
@@ -31,11 +31,7 @@ public class RestaurantActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView rDescription = (TextView) findViewById(R.id.restaurantName);
-        rDescription.setText(r.getRestaurantName() + "\n" +r.getRestaurantDescription() + "\nRating: " + r.getRestaurantRating() + "\nRating for " + d.getDiseaseName() + " : " );
-
-        RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar);
-        ratingBar1.setNumStars((int)r.getRestaurantRating());
-        ratingBar1.setEnabled(false);
+        rDescription.setText(r.getRestaurantName() + "\n" + r.getRestaurantDescription() + "\nRating: " + r.getRestaurantRating() + "\nRating for " + d.getDiseaseName() + " : ");
         final RatingBar ratingBar2 = (RatingBar) findViewById(R.id.diseaseRatingBar);
         Button b = (Button) findViewById(R.id.addRatingButton);
         b.setOnClickListener(new View.OnClickListener() {
