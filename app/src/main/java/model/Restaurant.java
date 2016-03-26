@@ -38,7 +38,7 @@ public class Restaurant {
         return sum;
     }
 
-    public void setRestaurantCustomeRating(Disease d, Double rating) {
+    public void setRestaurantCustomRating(Disease d, Double rating) {
         if(!customRatings.containsKey(d)) {
             customRatings.put(d, new ArrayList<Double>());
         }

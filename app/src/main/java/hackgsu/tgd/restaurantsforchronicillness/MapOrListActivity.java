@@ -12,7 +12,10 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
+import model.Restaurant;
+
 public class MapOrListActivity extends AppCompatActivity {
+    private static Place p;
     private static final int PLACE_PICKER_REQUEST = 1;
     public void onClickMap(View view) {
 //        Intent intent = new Intent(getApplicationContext(), MapActivity.class);
@@ -31,11 +34,19 @@ public class MapOrListActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
-                Place place = PlacePicker.getPlace(data, this);
+                Place place = PlacePicker.getPlace(this, data);
                 String toastMsg = String.format("Place: %s", place.getName());
                 Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+                Intent i = new Intent(this, RestaurantActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                p = place;
+                startActivity(i);
             }
         }
+    }
+
+    public static Place getPlace() {
+        return p;
     }
 
     public void onClickList(View view) {

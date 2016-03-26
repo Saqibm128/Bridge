@@ -15,6 +15,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import model.Disease;
+
 public class MainActivity extends AppCompatActivity {
 
     private ListView diseaseList;
@@ -27,16 +29,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, new ArrayList<String>());
+        final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, new ArrayList<Disease>());
         diseaseList = (ListView) findViewById(R.id.listView);
         diseaseList.setAdapter(adapter);
-        adapter.add("Diabetes");
-        adapter.add("Celiac");
+        adapter.add(new Disease("Diabetes", "Low Insulin Production or Ineffective Insulin"));
+        adapter.add(new Disease("Celiac", "Must limit amount of gluten intake"));
         diseaseList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), MapOrListActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                ((Disease) adapter.getItem(position)).setCurrentDisease();
                 getApplicationContext().startActivity(intent);
             }
         });

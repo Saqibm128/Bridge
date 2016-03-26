@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -54,14 +55,16 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
-
+            Toast t = Toast.makeText(this, "Application cannot handle location services", Toast.LENGTH_LONG);
+            t.show();
+            finish();
         }
         Location l = lm.getLastKnownLocation(lm.getBestProvider(new Criteria(), true));
         Log.d("hello",LocationManager.GPS_PROVIDER);
         Log.d("hello", "" + l.getLatitude());
         Log.d("hello", "" + l.getLongitude());
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(33.767, -84.39);
+        LatLng sydney = new LatLng(l.getLatitude(), l.getLongitude());
         mMap.addMarker(new MarkerOptions().position(sydney).title("Current Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
