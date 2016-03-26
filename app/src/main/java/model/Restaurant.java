@@ -49,7 +49,7 @@ public class Restaurant {
         return restaurantRating;
     }
 
-    public String getRestauruntDescription(){
+    public String getRestaurantDescription(){
         return restaurantDescription;
     }
 }
