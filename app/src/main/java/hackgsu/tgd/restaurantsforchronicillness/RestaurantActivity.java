@@ -1,5 +1,7 @@
 package hackgsu.tgd.restaurantsforchronicillness;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +12,8 @@ import android.widget.TextView;
 
 import com.google.android.gms.location.places.Place;
 
+import java.util.Locale;
+
 import model.Disease;
 import model.Restaurant;
 import model.RestaurantManager;
@@ -17,10 +21,11 @@ import model.RestaurantManager;
 public class RestaurantActivity extends AppCompatActivity {
     Restaurant r;
     Disease d;
+    Place p;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Place p = MainActivity.getPlace();
+        p = MainActivity.getPlace();
         String att = p.getAttributions()==null ? "" : p.getAttributions().toString();
         String name = p.getName()==null ? "" : p.getName().toString();
         r = new Restaurant(name, p.getRating(), att);
@@ -43,7 +48,9 @@ public class RestaurantActivity extends AppCompatActivity {
     }
 
     public void onDirections(View v) {
-
+        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", p.getLatLng().latitude, p.getLatLng().longitude);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        this.startActivity(intent);
     }
 
 
