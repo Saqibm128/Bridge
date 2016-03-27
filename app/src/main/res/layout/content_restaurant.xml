@@ -16,9 +16,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="getRestaurantName"
+        android:text="Restaurant"
         android:id="@+id/restaurantName"
-        android:textSize="100px"
         android:autoText="false"
         android:hyphenationFrequency="none"
         android:layout_alignParentTop="true"
@@ -30,9 +29,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Rating"
         android:id="@+id/overallRating"
-        android:layout_marginTop="29dp"
         android:layout_below="@+id/restaurantName"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp" />
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -44,12 +43,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Restaurant Description"
         android:id="@+id/descriptionTitle"
         android:layout_below="@+id/diseaseRatingBar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp" />
+        android:layout_marginTop="41dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -57,16 +56,14 @@
         android:text="Get Directions"
         android:id="@+id/goToMapButton"
         android:onClick="onDirections"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/restaurantName"
-        android:layout_alignStart="@+id/restaurantName" />
+        android:layout_below="@+id/addRatingButton"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="132dp"
         android:layout_height="wrap_content"
         android:text="Add Rating"
         android:id="@+id/addRatingButton"
-        android:layout_alignTop="@+id/goToMapButton"
-        android:layout_toRightOf="@+id/overallRating"
-        android:layout_toEndOf="@+id/overallRating" />
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
